@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo del Amor</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #d63384;
+        }
+        img {
+            width: 300px;
+            border-radius: 15px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b0276b;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+        .descripcion {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" autoplay loop>
+        <source src="assets/chano.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
+    <div class="container">
+        <h1>Oráculo del Amor 💖</h1>
+        <img src="https://stickerly.pstatic.net/sticker_pack/RoQKd7eh2a6EUxtCfRXefw/PTDFFC/16/1673169482169.png" alt="Gatito tierno">
+        <p>Ingresa los nombres:</p>
+        <input type="text" id="nombre1" placeholder="Tu nombre">
+        <input type="text" id="nombre2" placeholder="Su nombre">
+        <button onclick="verificarQuimica()">Consultar</button>
+        <p id="resultado"></p>
+        <p class="descripcion">🔮 El oroscopómetro es una herramienta mística que combina la magia de los astros con la energía de los nombres. ✨💫 A través de un análisis profundo (y bastante dudoso) de la química entre dos personas, puede predecir si están destinados a ser inseparables o si mejor deberían buscar nuevos rumbos. ¿Te animás a probar? 😉💕</p>
+    </div>
+    <script>
+        function verificarQuimica() {
+            let nombre1 = document.getElementById("nombre1").value.trim().toLowerCase();
+            let nombre2 = document.getElementById("nombre2").value.trim().toLowerCase();
+            let resultado = document.getElementById("resultado");
+            
+            if (nombre1 && nombre2) {
+                if ((nombre1 === "facu" && nombre2 === "zarii") || (nombre1 === "zarii" && nombre2 === "facu")) {
+                    resultado.innerText = "💖 ¡Hay mucha química entre Facu y Zarii! 💖";
+                } else {
+                    resultado.innerText = "😢 No wacho salí de ahí porque te van a re cuernear 😢";
+                }
+            } else {
+                resultado.innerText = "Pone 2 nombres flaco.";
+            }
+        }
+    </script>
+</body>
+<button onclick="document.getElementById('audio').play()">🎶 Reproducir Música</button>
+</html>
